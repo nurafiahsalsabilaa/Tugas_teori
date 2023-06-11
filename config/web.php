@@ -1,7 +1,7 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+$db = require __DIR__. '/db.php';
 
 $config = [
     'id' => 'basic',
@@ -14,7 +14,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'VoINRBh1G-AWPBbC4S7Sw-dg-8mSv_kN',
+            'cookieValidationKey' => 'YyYhhpwkLvBPZi9AN0rjm0Tgk4tOiC8k',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -43,14 +43,35 @@ $config = [
         ],
         'db' => $db,
         
-        'urlManager' => [
+    'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
+        'assetManager'=>[
+            'bundles'=>[
+                'yii\web\jqueryAsset'=> [
+                    'sourcePath' => null,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js'=>[
+                        'template089/js/jquery.min.js',
+                    ]
+                ],
+                'yii\bootstrap5\BootstrapAsset'=>[
+                    'sourcePath' => null ,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css'=>[
+                        'template089/css/bootstrap.min.css'
+                    ],
+                ],
+            ],
+        ],
         
     ],
+    
     'params' => $params,
 ];
 
