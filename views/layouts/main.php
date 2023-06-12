@@ -1,8 +1,8 @@
 <?php
+	use yii\helpers\url;
+?>
 
-/** @var yii\web\View $this */
-/** @var string $content */
-
+<?php
 use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap5\Breadcrumbs;
@@ -19,6 +19,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $this->params['met
 $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
@@ -57,7 +58,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home">Home</a></li>
-				          <li><a href="#about">About</a></li>
+				          <li><a href="<?= Url::to(['mahasiswaa089/index'])?>">DataBase</a></li>
 				          <li><a href="#coffee">Coffee</a></li>
 				          <li><a href="#review">Review</a></li>
 				          <li><a href="#blog">Blog</a></li>
@@ -94,22 +95,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 			<!-- Start video-sec Area -->
 			<section class="video-sec-area pb-100 pt-40" id="about">
 				<div class="container">
-					<div class="row justify-content-start align-items-center">
-						<div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
-							<div class="overlay overlay-bg"></div>
-							<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
-						</div>						
-						<div class="col-lg-6 video-left">
-							<h6>Live Coffee making process.</h6>
-							<h1>We Telecast our <br>
-							Coffee Making Live</h1>
-							<p><span>We are here to listen from you deliver exellence</span></p>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
-							</p>
-							<img class="img-fluid" src="img/signature.png" alt="">
-						</div>
-					</div>
+					<?= $content ?>
 				</div>	
 			</section>
 			<!-- End video-sec Area -->
@@ -440,7 +426,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
 							<div class="single-footer-widget">
 								<h6>Follow Us</h6>
-								<p>Let us be social</p>
+								<p>nurafiahsalsabila</p>
 								<div class="footer-social d-flex align-items-center">
 									<a href="#"><i class="fa fa-facebook"></i></a>
 									<a href="#"><i class="fa fa-twitter"></i></a>
