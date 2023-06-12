@@ -3,15 +3,14 @@
 /** @var yii\web\View $this */
 /** @var string $content */
 
-use app\assets\AppAsset089;
+use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
-use yii\helpers\Url;
 
-AppAsset089::register($this);
+AppAsset::register($this);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
@@ -29,338 +28,433 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
-<!-- Begin page -->
-<div id="wrapper">
 
-<!-- Top Bar Start -->
-<div class="topbar">
-
-    <!-- LOGO -->
-    <div class="topbar-left">
-        <div class="text-center">
-            <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i class="md md-album"></i>ld</span></a>
-            <!-- Image Logo here -->
-            <!--<a href="index.html" class="logo">-->
-                <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
-                <!--<span><img src="assets/images/logo_light.png" height="20"/></span>-->
-            <!--</a>-->
-        </div>
-    </div>
-
-    <!-- Button mobile view to collapse sidebar menu -->
-    <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="">
-                <div class="pull-left">
-                    <button class="button-menu-mobile open-left waves-effect waves-light">
-                        <i class="md md-menu"></i>
-                    </button>
-                    <span class="clearfix"></span>
-                </div>
-
-                <ul class="nav navbar-nav hidden-xs">
-                    <li><a href="#" class="waves-effect waves-light">Files</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
-                           role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <form role="search" class="navbar-left app-search pull-left hidden-xs">
-                     <input type="text" placeholder="Search..." class="form-control">
-                     <a href=""><i class="fa fa-search"></i></a>
-                </form>
+<header id="header" id="home">
+				<div class="header-top">
+		  			<div class="container">
+				  		<div class="row justify-content-end">
+				  			<div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
+				  				<ul>
+				  					<li>
+				  						Mon-Fri: 8am to 2pm
+				  					</li>
+				  					<li>
+				  						Sat-Sun: 11am to 4pm
+				  					</li>
+				  					<li>
+				  						<a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
+				  					</li>				  					
+				  				</ul>
+				  			</div>
+				  		</div>			  					
+		  			</div>
+				</div>			  	
+			    <div class="container">
+			    	<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          <li class="menu-active"><a href="#home">Home</a></li>
+				          <li><a href="#about">About</a></li>
+				          <li><a href="#coffee">Coffee</a></li>
+				          <li><a href="#review">Review</a></li>
+				          <li><a href="#blog">Blog</a></li>
+				          <li class="menu-has-children"><a href="">Pages</a>
+				            <ul>
+				              <li><a href="generic.html">Generic</a></li>
+				              <li><a href="elements.html">Elements</a></li>
+				            </ul>
+				          </li>
+				        </ul>
+				      </nav><!-- #nav-menu-container -->		    		
+			    	</div>
+			    </div>
+			  </header><!-- #header -->
 
 
-                <ul class="nav navbar-nav navbar-right pull-right">
-                    <li class="dropdown top-menu-item-xs">
-                        <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                            <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-lg">
-                            <li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>
-                            <li class="list-group slimscroll-noti notification-list">
-                               <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-diamond noti-primary"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                        <p class="m-0">
-                                            <small>There are new settings available</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
+			<!-- start banner Area -->
+			<section class="banner-area" id="home">	
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-start">
+						<div class="banner-content col-lg-7">
+							<h6 class="text-white text-uppercase">60200121089 (Kelas D)</h6>
+							<h1>
+								Start your day with <br>
+								a black Coffee Nurafiah salsabila				
+							</h1>
+							<a href="#" class="primary-btn text-uppercase">Buy Now</a>
+						</div>											
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->	
 
-                               <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-cog noti-warning"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">New settings</h5>
-                                        <p class="m-0">
-                                            <small>There are new settings available</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
+			<!-- Start video-sec Area -->
+			<section class="video-sec-area pb-100 pt-40" id="about">
+				<div class="container">
+					<div class="row justify-content-start align-items-center">
+						<div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
+							<div class="overlay overlay-bg"></div>
+							<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
+						</div>						
+						<div class="col-lg-6 video-left">
+							<h6>Live Coffee making process.</h6>
+							<h1>We Telecast our <br>
+							Coffee Making Live</h1>
+							<p><span>We are here to listen from you deliver exellence</span></p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+							</p>
+							<img class="img-fluid" src="img/signature.png" alt="">
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End video-sec Area -->
+			
+			<!-- Start menu Area -->
+			<section class="menu-area section-gap" id="coffee">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-10">
+							<div class="title text-center">
+								<h1 class="mb-10">What kind of Coffee we serve for you</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Cappuccino</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Americano</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Espresso</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>	
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Macchiato</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Mocha</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Coffee Latte</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Piccolo Latte</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Ristretto</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-menu">
+								<div class="title-div justify-content-between d-flex">
+									<h4>Affogato</h4>
+									<p class="price float-right">
+										$49
+									</p>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance.
+								</p>								
+							</div>
+						</div>															
+					</div>
+				</div>	
+			</section>
+			<!-- End menu Area -->
+			
+			<!-- Start gallery Area -->
+			<section class="gallery-area section-gap" id="gallery">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-10">
+							<div class="title text-center">
+								<h1 class="mb-10">What kind of Coffee we serve for you</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-4">
+							<a href="img/g1.jpg" class="img-pop-home">
+								<img class="img-fluid" src="img/g1.jpg" alt="">
+							</a>	
+							<a href="img/g2.jpg" class="img-pop-home">
+								<img class="img-fluid" src="img/g2.jpg" alt="">
+							</a>	
+						</div>
+						<div class="col-lg-8">
+							<a href="img/g3.jpg" class="img-pop-home">
+								<img class="img-fluid" src="img/g3.jpg" alt="">
+							</a>	
+							<div class="row">
+								<div class="col-lg-6">
+									<a href="img/g4.jpg" class="img-pop-home">
+										<img class="img-fluid" src="img/g4.jpg" alt="">
+									</a>	
+								</div>
+								<div class="col-lg-6">
+									<a href="img/g5.jpg" class="img-pop-home">
+										<img class="img-fluid" src="img/g5.jpg" alt="">
+									</a>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End gallery Area -->
+			
+			<!-- Start review Area -->
+			<section class="review-area section-gap" id="review">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-10">
+							<div class="title text-center">
+								<h1 class="mb-10">What kind of Coffee we serve for you</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-6 col-md-6 single-review">
+							<img src="img/r1.png" alt="">
+							<div class="title d-flex flex-row">
+								<h4>lorem ipusm</h4>
+								<div class="star">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>								
+								</div>
+							</div>
+							<p>
+								Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+							</p>
+						</div>	
+						<div class="col-lg-6 col-md-6 single-review">
+							<img src="img/r2.png" alt="">
+							<div class="title d-flex flex-row">
+								<h4>lorem ipusm</h4>
+								<div class="star">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>								
+								</div>
+							</div>
+							<p>
+								Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+							</p>
+						</div>	
+					</div>
+					<div class="row counter-row">
+						<div class="col-lg-3 col-md-6 single-counter">
+							<h1 class="counter">2536</h1>
+							<p>Happy Client</p>
+						</div>
+						<div class="col-lg-3 col-md-6 single-counter">
+							<h1 class="counter">7562</h1>
+							<p>Total Projects</p>
+						</div>
+						<div class="col-lg-3 col-md-6 single-counter">
+							<h1 class="counter">2013</h1>
+							<p>Cups Coffee</p>
+						</div>
+						<div class="col-lg-3 col-md-6 single-counter">
+							<h1 class="counter">10536</h1>
+							<p>Total Submitted</p>
+						</div>																		
+					</div>
+				</div>	
+			</section>
+			<!-- End review Area -->
+			
+			<!-- Start blog Area -->
+			<section class="blog-area section-gap" id="blog">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-10">
+							<div class="title text-center">
+								<h1 class="mb-10">What kind of Coffee we serve for you</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-6 col-md-6 single-blog">
+							<img class="img-fluid" src="img/b1.jpg" alt="">
+							<ul class="post-tags">
+								<li><a href="#">Travel</a></li>
+								<li><a href="#">Life Style</a></li>
+							</ul>
+							<a href="#"><h4>Portable latest Fashion for young women</h4></a>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
+							</p>
+							<p class="post-date">
+								11st June, 2023
+							</p>
+						</div>
+						<div class="col-lg-6 col-md-6 single-blog">
+							<img class="img-fluid" src="img/b2.jpg" alt="">
+							<ul class="post-tags">
+								<li><a href="#">Travel</a></li>
+								<li><a href="#">Life Style</a></li>
+							</ul>
+							<a href="#"><h4>Portable latest Fashion for young women</h4></a>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
+							</p>
+							<p class="post-date">
+								11st June, 2023
+							</p>
+						</div>						
+					</div>
+				</div>	
+			</section>
+			<!-- End blog Area -->
+			
 
-                               <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-bell-o noti-custom"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">Updates</h5>
-                                        <p class="m-0">
-                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>About Us</h6>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
+								</p>
+								<p class="footer-text">
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-5  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>Newsletter</h6>
+								<p>Stay update with our latest</p>
+								<div class="" id="mc_embed_signup">
+									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+										<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+			                            	<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+			                            	<div style="position: absolute; left: -5000px;">
+												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+											</div>
 
-                               <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-user-plus noti-pink"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">New user registered</h5>
-                                        <p class="m-0">
-                                            <small>You have 10 unread messages</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
-
-                                <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-diamond noti-primary"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                        <p class="m-0">
-                                            <small>There are new settings available</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
-
-                               <!-- list item-->
-                               <a href="javascript:void(0);" class="list-group-item">
-                                  <div class="media">
-                                     <div class="pull-left p-r-10">
-                                        <em class="fa fa-cog noti-warning"></em>
-                                     </div>
-                                     <div class="media-body">
-                                        <h5 class="media-heading">New settings</h5>
-                                        <p class="m-0">
-                                            <small>There are new settings available</small>
-                                        </p>
-                                     </div>
-                                  </div>
-                               </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="list-group-item text-right">
-                                    <small class="font-600">See all notifications</small>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="hidden-xs">
-                        <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a>
-                    </li>
-                    <li class="hidden-xs">
-                        <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
-                    </li>
-                    <li class="dropdown top-menu-item-xs">
-                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
-                            <li class="divider"></li>
-                            <li><a href="javascript:void(0)"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-<!-- Top Bar End -->
+										<div class="info pt-20"></div>
+									</form>
+								</div>
+							</div>
+						</div>						
+						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+							<div class="single-footer-widget">
+								<h6>Follow Us</h6>
+								<p>Let us be social</p>
+								<div class="footer-social d-flex align-items-center">
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-dribbble"></i></a>
+									<a href="#"><i class="fa fa-behance"></i></a>
+								</div>
+							</div>
+						</div>							
+					</div>
+				</div>
+			</footer>	
+			<!-- End footer Area -->	
 
 
-<!-- ========== Left Sidebar Start ========== -->
-
-<div class="left side-menu">
-    <div class="sidebar-inner slimscrollleft">
-        <!--- Divider -->
-        <div id="sidebar-menu">
-            <ul>
-                <li class="has_sub">
-                    <a href="<?=Url::to(['mahasiswaa089/index'])?>" class="waves-effect">
-                    <i class="fafa-mortar-board"></i>
-                    <span>Mahasiswa </span>
-                </a>
-
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!-- Left Sidebar End -->
-
-<!-- ============================================================== -->
-<!-- Start right Content here -->
-<!-- ============================================================== -->
-<div class="content-page">
-    <!-- Start content -->
-    <div class="content">
-        <div class="container">
-            <?= $content ?>
-        </div> <!-- container -->
-                   
-    </div> <!-- content -->
-
-    <footer class="footer">
-        © 2016. All rights reserved.
-    </footer>
-
-</div>
-<!-- ============================================================== -->
-<!-- End Right content here -->
-<!-- ============================================================== -->
-<!-- Right Sidebar -->
-<div class="side-bar right-bar nicescroll">
-    <h4 class="text-center">Chat</h4>
-    <div class="contact-list nicescroll">
-        <ul class="list-group contacts-list">
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-1.jpg" alt="">
-                    </div>
-                    <span class="name">Chadengle</span>
-                    <i class="fa fa-circle online"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-2.jpg" alt="">
-                    </div>
-                    <span class="name">Tomaslau</span>
-                    <i class="fa fa-circle online"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-3.jpg" alt="">
-                    </div>
-                    <span class="name">Stillnotdavid</span>
-                    <i class="fa fa-circle online"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-4.jpg" alt="">
-                    </div>
-                    <span class="name">Kurafire</span>
-                    <i class="fa fa-circle online"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-5.jpg" alt="">
-                    </div>
-                    <span class="name">Shahedk</span>
-                    <i class="fa fa-circle away"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-6.jpg" alt="">
-                    </div>
-                    <span class="name">Adhamdannaway</span>
-                    <i class="fa fa-circle away"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-7.jpg" alt="">
-                    </div>
-                    <span class="name">Ok</span>
-                    <i class="fa fa-circle away"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-8.jpg" alt="">
-                    </div>
-                    <span class="name">Arashasghari</span>
-                    <i class="fa fa-circle offline"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-9.jpg" alt="">
-                    </div>
-                    <span class="name">Joshaustin</span>
-                    <i class="fa fa-circle offline"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    <div class="avatar">
-                        <img src="assets/images/users/avatar-10.jpg" alt="">
-                    </div>
-                    <span class="name">Sortino</span>
-                    <i class="fa fa-circle offline"></i>
-                </a>
-                <span class="clearfix"></span>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- /Right-bar -->
-</div>
 <?php $this->endBody() ?>
 </body>
 </html>
